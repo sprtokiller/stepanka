@@ -46,7 +46,7 @@
     <header>
         <h1>Štěpánka Horká</h1>
         <div class="profile-image">
-            <img src="images/fotka.jpg" alt="Štěpánka Horká" width="200">
+            <img id="slideshow" src="images/fotka.jpg" alt="Štěpánka Horká" width="200">
         </div>
     </header>    <main>
         <section>            <h2>O mně</h2>
@@ -54,5 +54,28 @@
         </section>    </main>
     <footer>        <p>&copy; 2025 Štěpánka Horká</p>
     </footer>
+    <script>
+        // Seznam cest k obrázkům ve složce fotkyuvod
+        const images = [
+            'images/fotka.jpg',
+            'images/fotkyuvod/fotka2.jpg',
+            'images/fotkyuvod/fotka3.jpg',
+            'images/fotkyuvod/fotka4.jpg',
+            'images/fotkyuvod/fotka5.jpg',
+            // Přidejte další cesty k obrázkům podle potřeby
+        ];
+        
+        let currentIndex = 0;
+        const slideshowImage = document.getElementById('slideshow');
+        
+        // Funkce pro změnu obrázku
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slideshowImage.src = images[currentIndex];
+        }
+        
+        // Měnit obrázek každé 3 sekundy
+        setInterval(changeImage, 3000);
+    </script>
 </body>
 </html>
